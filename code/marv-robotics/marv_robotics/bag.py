@@ -1,7 +1,20 @@
 # -*- coding: utf-8 -*-
 #
-# Copyright 2016 - 2018  Ternaris.
-# SPDX-License-Identifier: AGPL-3.0-only
+# This file is part of MARV Robotics
+#
+# Copyright 2016-2018 Ternaris
+#
+# Licensed under the Apache License, Version 2.0 (the "License");
+# you may not use this file except in compliance with the License.
+# You may obtain a copy of the License at
+#
+#     http://www.apache.org/licenses/LICENSE-2.0
+#
+# Unless required by applicable law or agreed to in writing, software
+# distributed under the License is distributed on an "AS IS" BASIS,
+# WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+# See the License for the specific language governing permissions and
+# limitations under the License.
 
 from __future__ import absolute_import, division, print_function
 
@@ -114,6 +127,7 @@ def scan(dirpath, dirnames, filenames):
                       if x.endswith('.bag')],
                      lambda x: x.name)
     bags = []
+
     datasets = []
     for name, group in groups:
         group = list(group)
@@ -134,7 +148,29 @@ def scan(dirpath, dirnames, filenames):
                 datasets.insert(0, DatasetInfo(bag.basename, [bag.filename]))
                 bags[:] = []
         datasets[0:0] = [DatasetInfo(x.basename, [x.filename]) for x in bags]
+	
         bags[:] = []
+
+
+    filename1 = list(groupby(filenames))
+    """
+    Start my changes.
+    """
+    datasets1 = []
+    t=0
+		print("drin")
+    for name in filenames:
+
+        a=name.split(".")
+        if a[1]!='bag':
+            datasets1[0:0] = [DatasetInfo(filename1[t][0], [filename1[t][0]])]
+        t+=1
+
+    """Change end
+    """
+    datasets = datasets + datasets1
+
+
     return datasets
 
 
