@@ -1,0 +1,32 @@
+title: Large-Scale Direct SLAM for Omnidirectional Cameras
+
+shortname: omni-lsdslam
+
+description: >
+  We propose a real-time, direct monocular SLAM method for omnidirectional or wide field-of-view fisheye cameras. Both tracking (direct image alignment) and mapping (pixel-wise distance filtering) are directly formulated for the unified omnidirectional model, which can model central imaging devices with a field of view well above 150°. This is in stark contrast to existing direct mono-SLAM approaches like DTAM or LSD-SLAM, which operate on rectified images, limiting the field of view to well below 180°. Not only does this allow to observe – and reconstruct – a larger portion of the surrounding environment, but it also makes the system more robust to degenerate (rotation-only) movement. The two main contribution are (1) the formulation of direct image alignment for the unified omnidirectional model, and (2) a fast yet accurate approach to incremental stereo directly on distorted images. We evaluated our framework on real-world sequences taken with a 185◦ fish-eye lens, and compare it to a rectified and a piecewise rectified approach. 
+
+references:
+  - Large-Scale Direct SLAM for Omnidirectional Cameras (D. Caruso, J. Engel, D. Cremers), In International Conference on Intelligent Robots and Systems (IROS), 2015.
+  - https://vision.in.tum.de/_media/spezial/bib/caruso2015_omni_lsdslam.pdf
+  - https://vision.in.tum.de/data/datasets/omni-lsdslam
+
+bags:
+  - http://vmcremers8.informatik.tu-muenchen.de/lsd/OmniDataset/T1/T1_orig.bag
+  - http://vmcremers8.informatik.tu-muenchen.de/lsd/OmniDataset/T1/T1_rectified.bag
+  - http://vmcremers8.informatik.tu-muenchen.de/lsd/OmniDataset/T2/T2_orig.bag
+  - http://vmcremers8.informatik.tu-muenchen.de/lsd/OmniDataset/T2/T2_rectified.bag
+  - http://vmcremers8.informatik.tu-muenchen.de/lsd/OmniDataset/T3/T3_orig.bag
+  - http://vmcremers8.informatik.tu-muenchen.de/lsd/OmniDataset/T3/T3_rectified.bag
+  - http://vmcremers8.informatik.tu-muenchen.de/lsd/OmniDataset/T4/T4_orig.bag
+  - http://vmcremers8.informatik.tu-muenchen.de/lsd/OmniDataset/T4/T4_rectified.bag
+  - http://vmcremers8.informatik.tu-muenchen.de/lsd/OmniDataset/T5/T5_orig.bag
+  - http://vmcremers8.informatik.tu-muenchen.de/lsd/OmniDataset/T5/T5_rectified.bag
+
+authors:
+  - David Caruso
+  - Jakob Engel
+  - Daniel Cremers
+
+license: Creative Commons 4.0 Attribution License (CC BY 4.0)
+license_url: https://creativecommons.org/licenses/by/4.0/
+
